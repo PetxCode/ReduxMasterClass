@@ -6,15 +6,15 @@ import ProductCard from './ProductCard'
 
 const HomeScreen = ({view}) => {
   const dispatch = useDispatch()
-  // const data = useSelector(r => r.shop)
-  // console.log(data)
 
-  const getProductData = async () => {
-    const res = await axios.get("https://fakestoreapi.com/products")
-    if(res){
-      dispatch(addProduct(res.data))
-    }
+ const getProductData = async () => {
+  const res = await axios.get(" https://fakestoreapi.com/products ")
+ 
+  if(res){
+     console.log(res.data)
+     dispatch(addProduct(res.data))
   }
+ }
 
   useEffect(()=>{
     getProductData()
